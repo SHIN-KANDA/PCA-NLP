@@ -1,28 +1,28 @@
-###Á”ïÒ‚Ì–Ú‚Ì•t‚¯Š•Î
+###æ¶ˆè²»è€…ã®ç›®ã®ä»˜ã‘æ‰€å
 
 
-##CSV‰»‚ÆoŒ»•p“x
+##5ãƒ–ãƒ©ãƒ³ãƒ‰é€£çµã®ãƒ‡ãƒ¼ã‚¿ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’CSVåŒ–â†’å˜èªã®å‡ºç¾é »åº¦èª¿æŸ»
 write.csv(masterDF, file = "master.csv")
 master_freq = RMeCabFreq("master.csv")
-master_freq2 = master_freq[-c(1063:1114,1468,1663,146,52),]  #–¼Œ‚Ì‚¤‚¿‹L†‚ÆƒAƒCƒX‚È‚Ç“–‘R‚Ìƒ[ƒh‚ğíœ
+master_freq2 = master_freq[-c(1063:1114,1468,1663,146,52),]  #åè©ã®ã†ã¡è¨˜å·ã¨ã‚¢ã‚¤ã‚¹ãªã©å½“ç„¶ã®ãƒ¯ãƒ¼ãƒ‰ã‚’å‰Šé™¤
 
 
-##g‚¦‚é–¼Œ‚ÆŒ`—eŒ‚¾‚¯’Šo&‘½‚¢‡‚Éƒ\[ƒg
-master_F2 = subset(master_freq2, Info1 %in% c("–¼Œ","Œ`—eŒ"))
-master_F3 = subset(master_F2, !Info2 %in% c("Ú”ö","”ñ©—§","”"))
+##ä½¿ãˆã‚‹åè©ã¨å½¢å®¹è©ã ã‘æŠ½å‡ºâ†’å¤šã„é †ã«ã‚½ãƒ¼ãƒˆ
+master_F2 = subset(master_freq2, Info1 %in% c("åè©","å½¢å®¹è©"))
+master_F3 = subset(master_F2, !Info2 %in% c("æ¥å°¾","éè‡ªç«‹","æ•°"))
 master_F4 = master_F3[order(master_F3$Freq,decreasing = T),]
 master_F4 %>% head()
 
 
 
-##ƒOƒ‰ƒt
+##å‡ºç¾é »åº¦ãƒ©ãƒ³ã‚­ãƒ³ã‚°ã®ã‚°ãƒ©ãƒ•ä½œæˆ
 master_F4 %>%
   filter(Freq >=100) %>%
   mutate(Term = reorder(Term,Freq)) %>%
   ggplot(aes(Term,Freq)) +
   geom_col(fill = "lightgreen") +
   coord_flip() +
-  ggtitle("ƒŒƒrƒ…[‚É‚¨‚¯‚é•poŒê")+
-  ylab("oŒ»‰ñ”")+
-  xlab("’PŒê")
+  ggtitle("ãƒ¬ãƒ“ãƒ¥ãƒ¼ã«ãŠã‘ã‚‹é »å‡ºèª")+
+  ylab("å‡ºç¾å›æ•°")+
+  xlab("å˜èª")
 
