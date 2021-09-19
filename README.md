@@ -11,7 +11,7 @@ Target: 5 brands of vanilla ice cream (narrowing down to the most standard brand
 Data: A total of 950 online reviews  
 Analysis method: Principal component analysis, natural language processing (morphological analysis, co-occurrence network)  
 
-「売れる」アイスクリームの分析が全体のテーマ
+「売れる」アイスクリームの分析が全体のテーマ  
 濃厚さ、風味、口あたりといった様々な要素から語られるアイスクリームだが、実際に消費者がどのような観点で評価しているかをレビューから分析する。  
 消費者の評価観点に基づいた、既存ブランドのポジショニングを明らかにする。  
 合わせてレビューの文脈を考察し、既存ブランドでは満たされていない潜在需要を探る。
