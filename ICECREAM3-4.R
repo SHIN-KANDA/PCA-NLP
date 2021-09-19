@@ -1,24 +1,25 @@
-##12ŠÏ“_‚Í‚‚¢‚Æ‚¢‚¢‚Ì‚©’á‚¢‚Æ‚¢‚¢‚Ì‚©•Ò
+##12è¦³ç‚¹ã‚’ä½¿ã†æ–‡è„ˆèª¿æŸ»ç·¨
 
-##Ngram(n=2)‚Ìì¬
-#~‡‚É‚µ‚½ŒãA12‚ÌŠÏ“_‚ðŠÜ‚Þ‹¤‹N‚Ì‚Ý‚ð’Šo
+##Ngram(n=2)ã®ä½œæˆ
+#é™é †ã«ã—ãŸå¾Œã€12ã®è¦³ç‚¹ã‚’å«ã‚€å…±èµ·ã®ã¿ã‚’æŠ½å‡º
 
-ngram = NgramDF("master.csv",type = 1, N = 2,pos = c("–¼ŽŒ","Œ`—eŽŒ","“®ŽŒ"),)
+ngram = NgramDF("master.csv",type = 1, N = 2,pos = c("åè©ž","å½¢å®¹è©ž","å‹•è©ž"),)
 ngram2 = ngram[order(ngram$Freq,decreasing = T),]
-ngram3 = ngram2[(ngram2$Ngram1 == "–¡"|ngram2$Ngram1 == "”ZŒú"|ngram2$Ngram1 == "ŠÃ‚¢"|
-                  ngram2$Ngram1 == "ƒ~ƒ‹ƒN"|ngram2$Ngram1 == "ƒ{ƒŠƒ…[ƒ€"|ngram2$Ngram1 == "—Ê"|
-                  ngram2$Ngram1 == "–¡‚í‚¢"|ngram2$Ngram1 == "Œã–¡"|ngram2$Ngram1 == "’l’i"|
-                  ngram2$Ngram1 == "ƒRƒN"|ngram2$Ngram1 == "•X"|ngram2$Ngram1 == "‚È‚ß‚ç‚©"|
-                   ngram2$Ngram2 == "–¡"|ngram2$Ngram2 == "”ZŒú"|ngram2$Ngram2 == "ŠÃ‚¢"|
-                   ngram2$Ngram2 == "ƒ~ƒ‹ƒN"|ngram2$Ngram2 == "ƒ{ƒŠƒ…[ƒ€"|ngram2$Ngram2 == "—Ê"|
-                   ngram2$Ngram2 == "–¡‚í‚¢"|ngram2$Ngram2 == "Œã–¡"|ngram2$Ngram2 == "’l’i"|
-                   ngram2$Ngram2 == "ƒRƒN"|ngram2$Ngram2 == "•X"|ngram2$Ngram2 == "‚È‚ß‚ç‚©"),]
+ngram3 = ngram2[(ngram2$Ngram1 == "å‘³"|ngram2$Ngram1 == "æ¿ƒåŽš"|ngram2$Ngram1 == "ç”˜ã„"|
+                  ngram2$Ngram1 == "ãƒŸãƒ«ã‚¯"|ngram2$Ngram1 == "ãƒœãƒªãƒ¥ãƒ¼ãƒ "|ngram2$Ngram1 == "é‡"|
+                  ngram2$Ngram1 == "å‘³ã‚ã„"|ngram2$Ngram1 == "å¾Œå‘³"|ngram2$Ngram1 == "å€¤æ®µ"|
+                  ngram2$Ngram1 == "ã‚³ã‚¯"|ngram2$Ngram1 == "æ°·"|ngram2$Ngram1 == "ãªã‚ã‚‰ã‹"|
+                   ngram2$Ngram2 == "å‘³"|ngram2$Ngram2 == "æ¿ƒåŽš"|ngram2$Ngram2 == "ç”˜ã„"|
+                   ngram2$Ngram2 == "ãƒŸãƒ«ã‚¯"|ngram2$Ngram2 == "ãƒœãƒªãƒ¥ãƒ¼ãƒ "|ngram2$Ngram2 == "é‡"|
+                   ngram2$Ngram2 == "å‘³ã‚ã„"|ngram2$Ngram2 == "å¾Œå‘³"|ngram2$Ngram2 == "å€¤æ®µ"|
+                   ngram2$Ngram2 == "ã‚³ã‚¯"|ngram2$Ngram2 == "æ°·"|ngram2$Ngram2 == "ãªã‚ã‚‰ã‹"),]
 
 
-##oŒ»•p“x10ˆÈã‚Ì‚à‚Ì‚É‚Â‚¢‚Ä‹¤‹Nƒlƒbƒgƒ[ƒN‚Ìì¬
+##å‡ºç¾é »åº¦10ä»¥ä¸Šã®ã‚‚ã®ã«ã¤ã„ã¦å…±èµ·ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯ã®ä½œæˆ
 library(igraph)
 ngram4 = filter(ngram3,ngram3$Freq>=10)
 wng = graph.data.frame(ngram4)
 aaa = V(wng)
-tkplot(wng,vertex.label=aaa$name,layout=layout.fruchterman.reingold,vertex.size=1,edge.color = "Pink",vertex.shape = "circle",vertex.label.color = "black",vertex.frame.color = "black",vertex.size = 15)
+tkplot(wng,vertex.label=aaa$name,layout=layout.fruchterman.reingold,vertex.size=1,edge.color = "Pink",
+       vertex.shape = "circle",vertex.label.color = "black",vertex.frame.color = "black",vertex.size = 15)
 
