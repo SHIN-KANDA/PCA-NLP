@@ -1,4 +1,4 @@
-###€”õ•Ò
+###æº–å‚™ç·¨
 
 library(dplyr)
 library(tidyr)
@@ -15,50 +15,52 @@ library(lda)
 
 
 
-##ƒŒƒrƒ…[ƒTƒCƒg‚©‚ç¯‚ÆƒRƒƒ“ƒg‚Ì‚İ‚ğƒXƒNƒŒƒCƒsƒ“ƒO
+##ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚µã‚¤ãƒˆã‹ã‚‰æ˜Ÿã¨ã‚³ãƒ¡ãƒ³ãƒˆã®ã¿ã‚’ã‚¹ã‚¯ãƒ¬ã‚¤ãƒ”ãƒ³ã‚°
 library(rvest)
-haagen_rink_star = read_html("https://shareview.jp/item/detail/919?sort=new&disp=170#")
-haagen_star = html_nodes(haagen_rink_star,".latest-0 , p , .latest-1")%>% html_text()%>% iconv(from = "UTF-8",to = "Shift-JIS")
+# ãƒãƒ¼ã‚²ãƒ³ãƒ€ãƒƒãƒ„
+haagen_rink = read_html("https://xxxxxxxxxxxxxxxxxxxxxx")
+haagen_star = html_nodes(haagen_rink,".latest-0 , p , .latest-1")%>% html_text()%>% iconv(from = "UTF-8",to = "Shift-JIS")
 
-so_rink_star = read_html("https://shareview.jp/item/detail/5050?sort=new&disp=200#")
-so_star = html_nodes(so_rink_star,".latest-0 , p , .latest-1") %>% html_text()%>% iconv(from = "UTF-8",to = "Shift-JIS")
+# çˆ½
+so_rink = read_html("https://xxxxxxxxxxxxxxxxxxxxxx")
+so_star = html_nodes(so_rink,".latest-0 , p , .latest-1") %>% html_text()%>% iconv(from = "UTF-8",to = "Shift-JIS")
 
-mow_rink_star = read_html("https://shareview.jp/item/detail/4035?sort=new&disp=210#")
-mow_star = html_nodes(mow_rink_star,".latest-0 , p , .latest-1")%>% html_text()%>% iconv(from = "UTF-8",to = "Shift-JIS")
+# MOW
+mow_rink = read_html("https://xxxxxxxxxxxxxxxxxxxxxx")
+mow_star = html_nodes(mow_rink,".latest-0 , p , .latest-1")%>% html_text()%>% iconv(from = "UTF-8",to = "Shift-JIS")
 
-bokujo_rink_star = read_html("https://shareview.jp/item/detail/5923?sort=new&disp=90#")
-bokujo_star = html_nodes(bokujo_rink_star,".latest-0 , p , .latest-1")%>% html_text()%>% iconv(from = "UTF-8",to = "Shift-JIS")
+# ç‰§å ´ã—ã¼ã‚Š
+bokujo_rink = read_html("https://xxxxxxxxxxxxxxxxxxxxxx")
+bokujo_star = html_nodes(bokujo_rink,".latest-0 , p , .latest-1")%>% html_text()%>% iconv(from = "UTF-8",to = "Shift-JIS")
 
-supercup_rink_star = read_html("https://shareview.jp/item/detail/5068?sort=new&disp=280#")
-supercup_star = html_nodes(supercup_rink_star,".latest-0 , p , .latest-1") %>% html_text()%>% iconv(from = "UTF-8",to = "Shift-JIS")
-
-
-##Šm”F
-head(haagen_star)
-supercup_star[291:299]
+# ã‚¹ãƒ¼ãƒ‘ãƒ¼ã‚«ãƒƒãƒ—
+supercup_rink = read_html("https://xxxxxxxxxxxxxxxxxxxxxx")
+supercup_star = html_nodes(supercup_rink,".latest-0 , p , .latest-1") %>% html_text()%>% iconv(from = "UTF-8",to = "Shift-JIS")
 
 
-##—]Œv‚È•¶š—ñ‚Ìíœ¨ƒf[ƒ^ƒtƒŒ[ƒ€‰»¨—]Œv‚Ès‚Ìíœ
-haagen_star2 = haagen_star[-which(haagen_star %in% "‘Ş‰ïÏƒ†[ƒU[‚Å‚·")]
+
+
+## ä½™è¨ˆãªæ–‡å­—åˆ—ã®å‰Šé™¤â†’ãƒ‡ãƒ¼ã‚¿ãƒ•ãƒ¬ãƒ¼ãƒ åŒ–â†’ä½™è¨ˆãªè¡Œã®å‰Šé™¤
+haagen_star2 = haagen_star[-which(haagen_star %in% "é€€ä¼šæ¸ˆãƒ¦ãƒ¼ã‚¶ãƒ¼ã§ã™")]
 haagenDF = data.frame(matrix(haagen_star2[5:354],ncol=2,byrow =TRUE),stringsAsFactors = FALSE)
 haagenDF2 = haagenDF[-(171:175),]
 
-so_star2 = so_star[-which(so_star %in% "‘Ş‰ïÏƒ†[ƒU[‚Å‚·")]
+so_star2 = so_star[-which(so_star %in% "é€€ä¼šæ¸ˆãƒ¦ãƒ¼ã‚¶ãƒ¼ã§ã™")]
 soDF = data.frame(matrix(so_star2[4:415],ncol=2,byrow =TRUE),stringsAsFactors = FALSE)
 soDF2 = soDF[-(201:206),]
 
-mow_star2 = mow_star[-which(mow_star %in% "‘Ş‰ïÏƒ†[ƒU[‚Å‚·")]
+mow_star2 = mow_star[-which(mow_star %in% "é€€ä¼šæ¸ˆãƒ¦ãƒ¼ã‚¶ãƒ¼ã§ã™")]
 mowDF = data.frame(matrix(mow_star2[4:425],ncol=2,byrow =TRUE),stringsAsFactors = FALSE)
 mowDF2 = mowDF[-211,]
 
-bokujo_star2 = bokujo_star[-which(bokujo_star %in% "‘Ş‰ïÏƒ†[ƒU[‚Å‚·")]
+bokujo_star2 = bokujo_star[-which(bokujo_star %in% "é€€ä¼šæ¸ˆãƒ¦ãƒ¼ã‚¶ãƒ¼ã§ã™")]
 bokujoDF = data.frame(matrix(bokujo_star2[4:185],ncol=2,byrow =TRUE),stringsAsFactors = FALSE)
 bokujoDF2 = bokujoDF[-91,]
 
-supercup_star2 = supercup_star[-which(supercup_star %in% "‘Ş‰ïÏƒ†[ƒU[‚Å‚·")]
+supercup_star2 = supercup_star[-which(supercup_star %in% "é€€ä¼šæ¸ˆãƒ¦ãƒ¼ã‚¶ãƒ¼ã§ã™")]
 supercupDF = data.frame(matrix(supercup_star2[4:565],ncol=2,byrow =TRUE),stringsAsFactors = FALSE)
 supercupDF2 = supercupDF[-281,]
 
 
-##5í˜AŒ‹ƒf[ƒ^ƒtƒŒ[ƒ€‚Ìì¬
+##5ãƒ–ãƒ©ãƒ³ãƒ‰é€£çµãƒ‡ãƒ¼ã‚¿ãƒ•ãƒ¬ãƒ¼ãƒ ã®ä½œæˆ
 masterDF = rbind(haagenDF2,soDF2,mowDF2,bokujoDF2,supercupDF2)
