@@ -1,13 +1,15 @@
-##ŠeƒAƒCƒX‚Í‰½‚Å‚•]‰¿‚ğ“¾‚Ä‚¢‚é‚Ì‚©•Ò
+##å„ã‚¢ã‚¤ã‚¹ã¯ã©ã®è¦ç´ ã§é«˜è©•ä¾¡ã‚’å¾—ã¦ã„ã‚‹ã®ã‹ç·¨
 
-##¯4.0ˆÈã‚ğ’Šo
+
+##æ˜Ÿ4.0ä»¥ä¸Šã®ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’æŠ½å‡º
 haagenDF_high = haagenDF2[haagenDF2[,1]>=4.0,]
 soDF_high = soDF2[soDF2[,1]>=4.0,]
 mowDF_high = mowDF2[mowDF2[,1]>=4.0,]
 bokujoDF_high = bokujoDF2[bokujoDF2[,1]>=4.0,]
 supercupDF_high = supercupDF2[supercupDF2[,1]>=4.0,]
 
-##CSV‰»‚ÆoŒ»•p“x
+
+##å„ãƒ–ãƒ©ãƒ³ãƒ‰ã®é«˜è©•ä¾¡ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’CSVåŒ–â†’å˜èªã®å‡ºç¾é »åº¦èª¿æŸ»
 write.csv(haagenDF_high, file = "haagenDF_high.csv")
 haagenHIGH_freq = RMeCabFreq("haagenDF_high.csv")
 
@@ -24,18 +26,19 @@ write.csv(supercupDF_high, file = "supercupDF_high.csv")
 supercupHIGH_freq = RMeCabFreq("supercupDF_high.csv")
 
 
-##12ŠÏ“_‚Ì”²‚«o‚µ
-haagenHIGH_freq2 = subset(haagenHIGH_freq, Term %in% c("–¡","”ZŒú","ŠÃ‚¢","ƒ~ƒ‹ƒN","ƒ{ƒŠƒ…[ƒ€","—Ê","–¡‚í‚¢","Œã–¡","’l’i","ƒRƒN","‚È‚ß‚ç‚©","•X"))
-soHIGH_freq2 = subset(soHIGH_freq, Term %in% c("–¡","”ZŒú","ŠÃ‚¢","ƒ~ƒ‹ƒN","ƒ{ƒŠƒ…[ƒ€","—Ê","–¡‚í‚¢","Œã–¡","’l’i","ƒRƒN","‚È‚ß‚ç‚©","•X"))
-mowHIGH_freq2 = subset(mowHIGH_freq, Term %in% c("–¡","”ZŒú","ŠÃ‚¢","ƒ~ƒ‹ƒN","ƒ{ƒŠƒ…[ƒ€","—Ê","–¡‚í‚¢","Œã–¡","’l’i","ƒRƒN","‚È‚ß‚ç‚©","•X"))
-bokujoHIGH_freq2 = subset(bokujoHIGH_freq, Term %in% c("–¡","”ZŒú","ŠÃ‚¢","ƒ~ƒ‹ƒN","ƒ{ƒŠƒ…[ƒ€","—Ê","–¡‚í‚¢","Œã–¡","’l’i","ƒRƒN","‚È‚ß‚ç‚©","•X"))
-supercupHIGH_freq2 = subset(supercupHIGH_freq, Term %in% c("–¡","”ZŒú","ŠÃ‚¢","ƒ~ƒ‹ƒN","ƒ{ƒŠƒ…[ƒ€","—Ê","–¡‚í‚¢","Œã–¡","’l’i","ƒRƒN","‚È‚ß‚ç‚©","•X"))
+##3-2ã§åˆ¤æ˜ã—ãŸ12è¦³ç‚¹ã«çµã‚‹
+haagenHIGH_freq2 = subset(haagenHIGH_freq, Term %in% c("å‘³","æ¿ƒåš","ç”˜ã„","ãƒŸãƒ«ã‚¯","ãƒœãƒªãƒ¥ãƒ¼ãƒ ","é‡","å‘³ã‚ã„","å¾Œå‘³","å€¤æ®µ","ã‚³ã‚¯","ãªã‚ã‚‰ã‹","æ°·"))
+soHIGH_freq2 = subset(soHIGH_freq, Term %in% c("å‘³","æ¿ƒåš","ç”˜ã„","ãƒŸãƒ«ã‚¯","ãƒœãƒªãƒ¥ãƒ¼ãƒ ","é‡","å‘³ã‚ã„","å¾Œå‘³","å€¤æ®µ","ã‚³ã‚¯","ãªã‚ã‚‰ã‹","æ°·"))
+mowHIGH_freq2 = subset(mowHIGH_freq, Term %in% c("å‘³","æ¿ƒåš","ç”˜ã„","ãƒŸãƒ«ã‚¯","ãƒœãƒªãƒ¥ãƒ¼ãƒ ","é‡","å‘³ã‚ã„","å¾Œå‘³","å€¤æ®µ","ã‚³ã‚¯","ãªã‚ã‚‰ã‹","æ°·"))
+bokujoHIGH_freq2 = subset(bokujoHIGH_freq, Term %in% c("å‘³","æ¿ƒåš","ç”˜ã„","ãƒŸãƒ«ã‚¯","ãƒœãƒªãƒ¥ãƒ¼ãƒ ","é‡","å‘³ã‚ã„","å¾Œå‘³","å€¤æ®µ","ã‚³ã‚¯","ãªã‚ã‚‰ã‹","æ°·"))
+supercupHIGH_freq2 = subset(supercupHIGH_freq, Term %in% c("å‘³","æ¿ƒåš","ç”˜ã„","ãƒŸãƒ«ã‚¯","ãƒœãƒªãƒ¥ãƒ¼ãƒ ","é‡","å‘³ã‚ã„","å¾Œå‘³","å€¤æ®µ","ã‚³ã‚¯","ãªã‚ã‚‰ã‹","æ°·"))
 
-##‰ÁH(•iŒ‚ÆŠˆ—p‚Ìíœ¨“]’u‚µ‚Ä‰¡’·‚É¨ƒf[ƒ^ƒtƒŒ[ƒ€‰»¨•s‘«—ñ‚Ì’Ç‰Á¨•À‚×‘Ö‚¦‚Ä“ˆê¨s—ñ‰»)
+
+##åŠ å·¥(å“è©ã¨æ´»ç”¨ã®å‰Šé™¤â†’è»¢ç½®ã—ã¦æ¨ªé•·ã«â†’ãƒ‡ãƒ¼ã‚¿ãƒ•ãƒ¬ãƒ¼ãƒ åŒ–â†’ä¸è¶³åˆ—ã®è¿½åŠ â†’ä¸¦ã¹æ›¿ãˆã¦çµ±ä¸€â†’è¡Œåˆ—åŒ–)
 haagenHIGH_freq3 = haagenHIGH_freq2[,-(2:3)]
 haagen_index = t(haagenHIGH_freq3)
 haagen_index2 = as.data.frame(haagen_index)
-haagen_index3 = transform(haagen_index2,EX = c("ƒ{ƒŠƒ…[ƒ€",0))
+haagen_index3 = transform(haagen_index2,EX = c("ãƒœãƒªãƒ¥ãƒ¼ãƒ ",0))
 haagen_index4 = haagen_index3[,c(1,2,14,3,4,5,6,7,8,9,10,11,12,13)]
 haagen_index5 = as.matrix(haagen_index4)
 
@@ -48,26 +51,26 @@ so_index5 = as.matrix(so_index2)
 mowHIGH_freq3 = mowHIGH_freq2[,-(2:3)]
 mow_index = t(mowHIGH_freq3)
 mow_index2 = as.data.frame(mow_index)
-mow_index3 = transform(mow_index2,EX = c("•X",0))
+mow_index3 = transform(mow_index2,EX = c("æ°·",0))
 mow_index4 = mow_index3[,c(1,2,3,4,5,6,14,7,8,9,10,11,12,13)]
 mow_index5 = as.matrix(mow_index4)
 
 bokujoHIGH_freq3 = bokujoHIGH_freq2[,-(2:3)]
 bokujo_index = t(bokujoHIGH_freq3)
 bokujo_index2 = as.data.frame(bokujo_index)
-bokujo_index3 = transform(bokujo_index2,EX = c("•X",0),EX2 = c("—Ê",0))
+bokujo_index3 = transform(bokujo_index2,EX = c("æ°·",0),EX2 = c("é‡",0))
 bokujo_index4 = bokujo_index3[,c(1,2,3,4,5,6,13,7,8,9,10,11,12,14)]
 bokujo_index5 = as.matrix(bokujo_index4)
 
 supercupHIGH_freq3 = supercupHIGH_freq2[,-(2:3)]
 supercup_index = t(supercupHIGH_freq3)
 supercup_index2 = as.data.frame(supercup_index)
-supercup_index3 = transform(supercup_index2,EX = c("•X",0))
+supercup_index3 = transform(supercup_index2,EX = c("æ°·",0))
 supercup_index4 = supercup_index3[,c(1,2,3,4,5,6,14,7,8,9,10,11,12,13)]
 supercup_index5 = as.matrix(supercup_index4)
 
 
-##5í~12ŠÏ“_‚Ìs—ñ‚Ìì¬
+##5ãƒ–ãƒ©ãƒ³ãƒ‰Ã—12è¦³ç‚¹ã®è¡Œåˆ—ã®ä½œæˆ
 all_index =rbind(haagen_index5,so_index5,mow_index5,bokujo_index5,supercup_index5)
 all_index2 = all_index[c(2,4,6,8,10),]
 all_index2[1,8] = 90
@@ -81,27 +84,32 @@ all_index2[3,10] = 34
 all_index2[4,10] = 9
 all_index2[5,10] = 60
 all_index3 = all_index2[,-c(13,14)]
-all_index4 = as.data.frame(all_index3,row.names = c("ƒn[ƒQƒ“ƒ_ƒbƒc","‘u","MOW","–qê‚µ‚Ú‚è","ƒX[ƒp[ƒJƒbƒv"))
-colnames(all_index4) = c("ŠÃ‚¢","ƒRƒN","ƒ{ƒŠƒ…[ƒ€","ƒ~ƒ‹ƒN","Œã–¡","’l’i","•X","–¡","–¡‚í‚¢","—Ê","‚È‚ß‚ç‚©","”ZŒú")
+all_index4 = as.data.frame(all_index3,row.names = c("ãƒãƒ¼ã‚²ãƒ³ãƒ€ãƒƒãƒ„","çˆ½","MOW","ç‰§å ´ã—ã¼ã‚Š","ã‚¹ãƒ¼ãƒ‘ãƒ¼ã‚«ãƒƒãƒ—"))
+colnames(all_index4) = c("ç”˜ã„","ã‚³ã‚¯","ãƒœãƒªãƒ¥ãƒ¼ãƒ ","ãƒŸãƒ«ã‚¯","å¾Œå‘³","å€¤æ®µ","æ°·","å‘³","å‘³ã‚ã„","é‡","ãªã‚ã‚‰ã‹","æ¿ƒåš")
 all_index5 = as.matrix(all_index4)
 all_index6 = as.numeric(all_index5)
 all_index7 = matrix(all_index6,ncol = 12,nrow = 5)
-rownames(all_index7) =  c("ƒn[ƒQƒ“ƒ_ƒbƒc","‘u","MOW","–qê‚µ‚Ú‚è","ƒX[ƒp[ƒJƒbƒv")
-colnames(all_index7) =  c("ŠÃ‚¢","ƒRƒN","ƒ{ƒŠƒ…[ƒ€","ƒ~ƒ‹ƒN","Œã–¡","’l’i","•X","–¡","–¡‚í‚¢","—Ê","‚È‚ß‚ç‚©","”ZŒú")
+rownames(all_index7) =  c("ãƒãƒ¼ã‚²ãƒ³ãƒ€ãƒƒãƒ„","çˆ½","MOW","ç‰§å ´ã—ã¼ã‚Š","ã‚¹ãƒ¼ãƒ‘ãƒ¼ã‚«ãƒƒãƒ—")
+colnames(all_index7) =  c("ç”˜ã„","ã‚³ã‚¯","ãƒœãƒªãƒ¥ãƒ¼ãƒ ","ãƒŸãƒ«ã‚¯","å¾Œå‘³","å€¤æ®µ","æ°·","å‘³","å‘³ã‚ã„","é‡","ãªã‚ã‚‰ã‹","æ¿ƒåš")
 
-sum(haagenHIGH_freq[,4])
+
+## å˜èªã‚’å‡ºç¾å›æ•°ã§ã¯ãªãå‡ºç¾ç¢ºç‡ã«ã—ã¦æ¨™æº–åŒ–ï¼ˆãƒ–ãƒ©ãƒ³ãƒ‰ã«ã‚ˆã‚‹ã‚µãƒ³ãƒ—ãƒ«ã‚µã‚¤ã‚ºã®é•ã„ã‚’è€ƒæ…®ï¼‰
 for (i in 1:12) {
-  all_index7[1,i] = all_index7[1,i]*100/9741
+  all_index7[1,i] = all_index7[1,i]*100/(sum(haagenHIGH_freq[,4]))
 }
+
 for (i in 1:12) {
   all_index7[2,i] = all_index7[2,i]*100/(sum(soHIGH_freq[,4]))
 }
+
 for (i in 1:12) {
   all_index7[3,i] = all_index7[3,i]*100/(sum(mowHIGH_freq[,4]))
 }
+
 for (i in 1:12) {
   all_index7[4,i] = all_index7[4,i]*100/(sum(bokujoHIGH_freq[,4]))
 }
+
 for (i in 1:12) {
   all_index7[5,i] = all_index7[5,i]*100/(sum(supercupHIGH_freq[,4]))
 }
@@ -109,7 +117,7 @@ for (i in 1:12) {
 all_index8 = round(all_index7,digits = 3)
 
 
-##å¬•ª•ªÍ
+##ä¸»æˆåˆ†åˆ†æ
 pca.1 = prcomp(all_index8,scale. = F)
 summary(pca.1)
 biplot(x=pca.1)
